@@ -1,0 +1,14 @@
+{
+    "name": "ahmed-safar-eg/arabic-franco",
+    "description": "Convert Arabic text to Franco",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "ArabicFranco\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "require": {}
+}
