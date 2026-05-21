@@ -39,15 +39,16 @@ class FrancoService
         'ة' => 't',
     ];
 
-    public function convert($text,$removeSpaces=true,$removeNonAlphanumeric=true,$makeItUpperCase=false)
+    public function convert($text,$removeSpaces=true,$removeNonAlphanumeric=true,$makeItUpperCase=false,$replaceSpacesChar='-')
     {
         $francoText= strtr($text, $this->map);
         if($removeNonAlphanumeric){
             $francoText = preg_replace('/[^a-zA-Z0-9 \-]/', '', $francoText);
         }
         if($removeSpaces){
-            $francoText = preg_replace('/\s+/', ' ', $francoText);
             $francoText = trim($francoText);
+            $francoText = preg_replace('/\s/', $replaceSpacesChar, $francoText);
+            $francoText = preg_replace('/'.$replaceSpacesChar.'+/', $replaceSpacesChar, $francoText);
         }
         if($makeItUpperCase){
             $francoText = strtoupper($francoText);
