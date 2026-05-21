@@ -2,6 +2,12 @@
     "name": "ahmed-safar-eg/arabic-franco",
     "description": "Convert Arabic text to Franco",
     "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ahmed Safar"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "ArabicFranco\\": "src/"
